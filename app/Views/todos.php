@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Todo List</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+   <!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">To-Do List</span>
+</nav>
+
 </head>
 <body>
  
@@ -15,32 +21,31 @@
         echo $_SESSION['msg'];
       }
      ?>
+
   <div class="row mt-3">
-     <table class="table table-bordered" id="todos">
-       <thead>
-          <tr>
-             <th>ID</th>
-             <th>Title</th>
-             <th>Description</th>
-             <th>Action</th>
-          </tr>
-       </thead>
-       <tbody>
-          <?php if($todos): ?>
-          <?php foreach($todos as $todo): ?>
-          <tr>
-             <td><?php echo $todo['id']; ?></td>
-             <td><?php echo $todo['title']; ?></td>
-             <td><?php echo $todo['description']; ?></td>
-             <td>
-              <a href="<?php echo base_url('todos/edit/'.$todo['id']);?>" class="btn btn-success">Edit</a>
+      <!--Row for todolist-->
+     <div class="row" >
+   <?php if($todos): ?>
+   <?php foreach($todos as $todo): ?>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $todo['id']; ?></h5>
+        <p class="card-text"><?php echo $todo['title']; ?></p>
+        <p class="card-text"><?php echo $todo['description']; ?></p>
+        <a href="<?php echo base_url('todos/edit/'.$todo['id']);?>" class="btn btn-success">Edit</a>
               <a href="<?php echo base_url('todos/delete/'.$todo['id']);?>" class="btn btn-danger">Delete</a>
-              </td>
-          </tr>
-         <?php endforeach; ?>
-         <?php endif; ?>
-       </tbody>
-     </table>
+      </div>
+    </div>
+    <br>
+  </div>
+  
+  <?php endforeach; ?>
+   <?php endif; ?>
+
+
+</div>
+
   </div>
 </div>
  

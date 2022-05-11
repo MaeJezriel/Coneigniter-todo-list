@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Codeigniter 4 Edit User Form With Validation Example</title>
+<title>Todo List</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>  
@@ -32,30 +32,6 @@
 </div>
 </div>
 <script>
-if ($("#edit-todo").length > 0) {
-$("#edit-todo").validate({
-rules: {
-name: {
-required: true,
-},
-email: {
-required: true,
-maxlength: 50,
-email: true,
-},   
-},
-messages: {
-name: {
-required: "Please enter name",
-},
-email: {
-required: "Please enter valid email",
-email: "Please enter valid email",
-maxlength: "The email name should less than or equal to 50 characters",
-}, 
-},
-})
-}
 </script>
 </body>
 </html>
